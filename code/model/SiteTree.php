@@ -1134,7 +1134,7 @@ class SiteTree extends DataObject implements PermissionProvider,i18nEntityProvid
 	 * @param callable|string $batchCallback The function/static method to call to calculate permissions.  Defaults
 	 *                                       to 'SiteTree::can_(permission)_multiple'
 	 */
-	static public function prepopulate_permission_cache($permission = 'CanEditType', $ids, $batchCallback = null) {
+	static public function prepopulate_permission_cache($permission = 'CanEditType', $ids = [], $batchCallback = null) {
 		if(!$batchCallback) $batchCallback = "SiteTree::can_{$permission}_multiple";
 
 		if(is_callable($batchCallback)) {
